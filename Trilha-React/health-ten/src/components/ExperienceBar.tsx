@@ -5,9 +5,9 @@ export function ExperienceBar(){
         <header className='experience-bar'>
             <span>0 xp</span>
             <div>                
-                <div style={{width: '50%'}} >
+                <div style={{width: '33%'}} >
 
-                <span className='current-experience' style={{ left: '50%'}}>
+                <span className='current-experience' style={{ left: '33%'}}>
                     300xp
                 </span>
                 
