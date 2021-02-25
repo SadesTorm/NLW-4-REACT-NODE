@@ -46,12 +46,33 @@
     background: var(--blue);
     color: var(--white);
 
+    border: 0;
+
     font-size: 1.25rem;
     font-weight: 600;
 
     transition: background-color 0.3s;
 }
 
-.countdownButton:hover{
+.countdownButton:not(:disabled):hover{
     background: var(--blue-dark);
+}
+
+.countdownButtonStop{
+ 
+    background: var(--white);
+    color: var(--title);
+
+    transition: background-color 0.3s;
+}
+
+.countdownButtonStop:not(:disabled):hover{
+    background: var(--red);
+    color: var(--white)
+}
+
+.countdownButton:disabled{
+    background: var(--white);
+    color: var(--title);
+    cursor: not-allowed;
 }
