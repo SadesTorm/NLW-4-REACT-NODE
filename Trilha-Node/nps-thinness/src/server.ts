@@ -1,21 +1,12 @@
-import 'reflect-metadata'
+import 'reflect-metadata';
 import express, { request, response } from 'express';
-import "./database"
+import "./database";
+import { router } from './routes';
 const app = express();
 
+app.use(express.json());
+app.use(router);
 
-
-app.get("/", (request, response) => {
-    return response.json({
-        message: "Bem Vindo ao NLW4",
-        data: "23/02/2021"
-    });
-});
-
-app.post("/",(request,response)=>{
-
-    return response.json({message:"Dados gravado com sucesso."})
-})
 
 
 app.listen(3333, () => console.log("Server Running"));
