@@ -1,14 +1,26 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ChallengesContext } from '../contexts/ChallengesContext';
 import { CowntodownContext } from '../contexts/CountdownContext';
 import styles from '../styles/components/ChallengeBox.module.css'
 import { CompletedChallengens } from './CompletedChallenges';
+import api from '../services/api';
 
 
 export function ChallengeBox(){
 
     const { activeChallenge,resetChallenge, completedChallenge } = useContext(ChallengesContext);
     const { resetCountdown } = useContext(CowntodownContext);
+
+    useEffect(() => {
+        api.get('surveys').then(response => {
+            console.log(response);
+            
+        }).catch( error => {
+            console.log(error);            
+
+        } );
+    },[]);
+   
 
     function handleChallengeSucceeded(){
         completedChallenge();

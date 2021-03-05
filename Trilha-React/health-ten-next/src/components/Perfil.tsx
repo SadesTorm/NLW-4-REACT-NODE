@@ -6,7 +6,7 @@ export function Perfil(){
 
     const { level } = useContext(ChallengesContext);
     return(
-        <div className={styles.perfilContainer}>
+        <div className={styles.perfilContainer} >
             <img src="logo-robo.png" alt="Foto de Perfil"/>
             <div>
                 <strong>Paulo Henrique</strong>
